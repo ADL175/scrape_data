@@ -1,22 +1,55 @@
-appnope==0.1.0
-beautifulsoup4==4.6.0
-certifi==2017.4.17
-chardet==3.0.4
-decorator==4.0.11
-html5lib==0.999999999
-idna==2.5
-ipython==6.1.0
-ipython-genutils==0.2.0
-jedi==0.10.2
-pexpect==4.2.1
-pickleshare==0.7.4
-prompt-toolkit==1.0.14
-ptyprocess==0.5.1
-Pygments==2.2.0
-requests==2.18.1
-simplegeneric==0.8.1
-six==1.10.0
-traitlets==4.3.2
-urllib3==1.21.1
-wcwidth==0.1.7
-webencodings==0.5.1
+"""Scraper setup."""
+
+from setuptools import setup
+
+requires = [
+    'appnope',
+    'beautifulsoup4',
+    'certifi',
+    'chardet',
+    'click',
+    'decorator',
+    'geocoder',
+    'html5lib',
+    'idna',
+    'ipython',
+    'ipython-genutils',
+    'jedi',
+    'pexpect',
+    'pickleshare',
+    'prompt-toolkit',
+    'ptyprocess',
+    'Pygments',
+    'ratelim',
+    'requests',
+    'simplegeneric',
+    'six',
+    'traitlets',
+    'urllib3',
+    'wcwidth',
+    'webencodings',
+]
+
+tests_require = [
+    'WebTest >= 1.3.1',  # py3 compat
+    'pytest',
+]
+
+setup(
+    name='scraper',
+    version='0.0',
+    description='Scraper',
+    long_description=README
+    author='David Lim',
+    author_email='',
+    license="MIT",
+    url='',
+    keywords='scraper',
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=False,
+    extras_require={
+        'testing': tests_require,
+    },
+    install_requires=requires,
+)
